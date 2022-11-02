@@ -71,14 +71,4 @@ public class SignIn_StepDefs {
         Assert.assertEquals(actualMessage,expectedMessage);
 
     }
-
-
-    @Then("Sorry, that password isn't valid. Please include a letter.")
-    public void sorryThatPasswordIsnTValidPleaseIncludeALetter() {
-
-        String expectedMessage="Sorry, that password isn't valid. Please include a letter.";
-        String actualMessage=signInPage.message.getText();
-        Assert.assertEquals(actualMessage,expectedMessage);
-
-    }
 }

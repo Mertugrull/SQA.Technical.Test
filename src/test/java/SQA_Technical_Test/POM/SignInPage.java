@@ -31,5 +31,10 @@ public class SignInPage {
     @FindBy(xpath = "//p[@class='form-message__text']")
     public WebElement message;
 
+    @FindBy(xpath = "//p[@class='form-message__text']")
+    public WebElement message1;
+
+
+
 
 }

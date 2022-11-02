@@ -1,4 +1,4 @@
-@wip
+
 Feature: Sign In icon and assertion
 
   Background:
@@ -16,17 +16,13 @@ Feature: Sign In icon and assertion
       Then user is able to see Something’s missing. Please check and try again.
 
 
-      Scenario:
+      Scenario:Verify the error message; Sorry, that password is too short. It needs to be eight characters or more.
         When user click the Sign In icon
         When user input password
         And user click sign in button
       Then user is able to see Sorry, that password is too short. It needs to be eight characters or more.
 
-  Scenario:
-    When user click the Sign In icon
-    When user input password
-    And user click sign in button
-    Then Sorry, that password isn't valid. Please include a letter.
+
 
 
 
