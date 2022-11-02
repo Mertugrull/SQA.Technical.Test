@@ -29,10 +29,14 @@ public class SignInPage {
     public WebElement helpSignInLink;
 
     @FindBy(xpath = "//p[@class='form-message__text']")
-    public WebElement message;
+    public WebElement passwordMessage;
 
-    @FindBy(xpath = "//p[@class='form-message__text']")
-    public WebElement message1;
+    @FindBy(xpath ="/p[@class='form-message__text']")
+    public WebElement usernameMessage;
+
+    @FindBy(id="form-message-password")
+    public WebElement formMessage;
+
 
 
 

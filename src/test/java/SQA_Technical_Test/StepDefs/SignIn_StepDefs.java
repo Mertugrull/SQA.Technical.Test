@@ -28,6 +28,7 @@ public class SignIn_StepDefs {
     @Then("user is able to see Email or Username, Password, Sign in, Need help signing in?")
     public void user_is_able_to_see_email_or_username_password_sign_in_need_help_signing_in() {
 
+        Assert.assertTrue("Email or username should be displayed",signInPage.usernameBox.isDisplayed());
         System.out.println("signInPage.usernameBox.isDisplayed() = " + signInPage.usernameBox.isDisplayed());
         System.out.println("signInPage.passwordBox.isDisplayed() = " + signInPage.passwordBox.isDisplayed());
         System.out.println("signInPage.signInButton.isDisplayed() = " + signInPage.signInButton.isDisplayed());
@@ -53,22 +54,10 @@ public class SignIn_StepDefs {
         signInPage.signInButton.click();
     }
 
-    @Then("user is able to see Something’s missing. Please check and try again.")
-    public void userIsAbleToSeeSomethingSMissingPleaseCheckAndTryAgain() {
+    @Then("user is able to see; Sorry, that password isn't valid. Please include a letter.")
+    public void userIsAbleToSeeSorryThatPasswordIsnTValidPleaseIncludeALetter() {
 
-        String expectedMessage="Something’s missing. Please check and try again.";
-        String actualMessage=signInPage.message.getText();
-       //Assert.assertEquals("Expected and actual does not match",actualMessage, expectedMessage );
-        Assert.assertEquals(actualMessage,expectedMessage);
+        Assert.assertTrue("This message should be displayed", signInPage.passwordMessage.isDisplayed());
     }
 
-
-    @Then("user is able to see Sorry, that password is too short. It needs to be eight characters or more.")
-    public void userIsAbleToSeeSorryThatPasswordIsTooShortItNeedsToBeEightCharactersOrMore() {
-
-        String expectedMessage="Sorry, that password is too short. It needs to be eight characters or more.";
-        String actualMessage=signInPage.message.getText();
-        Assert.assertEquals(actualMessage,expectedMessage);
-
-    }
 }
