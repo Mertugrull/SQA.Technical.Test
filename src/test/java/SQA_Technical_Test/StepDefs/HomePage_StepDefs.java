@@ -21,16 +21,16 @@ public class HomePage_StepDefs {
     @Then("user is able to see Sign In Icon at the top of the screen")
     public void user_is_able_to_see_sign_in_icon_at_the_top_of_the_screen() {
 
-        System.out.println("homePage.signInIcon.isDisplayed() = " + homePage.signInIcon.isDisplayed());
+        Assert.assertTrue("Sign In icon should be displayed", homePage.signInIcon.isDisplayed());
 
     }
 
     @Then("England, N.Ireland and Scotland on the home page")
     public void england_n_ireland_and_scotland_on_the_home_page() {
 
-        Assert.assertTrue("The country name should be displayed",homePage.englandLink.isDisplayed());
-        System.out.println("homePage.scotlandLink.isDisplayed() = " + homePage.scotlandLink.isDisplayed());
-        System.out.println("homePage.nIrelandLink.isDisplayed() = " + homePage.nIrelandLink.isDisplayed());
+        Assert.assertTrue("England should be displayed",homePage.englandLink.isDisplayed());
+        Assert.assertTrue("N.Ireland should be displayed",homePage.scotlandLink.isDisplayed());
+       Assert.assertTrue("Scotland should be displayed",homePage.nIrelandLink.isDisplayed());
 
     }
 
