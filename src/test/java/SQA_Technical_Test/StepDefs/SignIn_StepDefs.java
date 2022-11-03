@@ -29,10 +29,9 @@ public class SignIn_StepDefs {
     public void user_is_able_to_see_email_or_username_password_sign_in_need_help_signing_in() {
 
         Assert.assertTrue("Email or username should be displayed",signInPage.usernameBox.isDisplayed());
-        System.out.println("signInPage.usernameBox.isDisplayed() = " + signInPage.usernameBox.isDisplayed());
-        System.out.println("signInPage.passwordBox.isDisplayed() = " + signInPage.passwordBox.isDisplayed());
-        System.out.println("signInPage.signInButton.isDisplayed() = " + signInPage.signInButton.isDisplayed());
-        System.out.println("signInPage.helpSignInLink.isDisplayed() = " + signInPage.helpSignInLink.isDisplayed());
+        Assert.assertTrue("Password should be displayed", signInPage.passwordBox.isDisplayed());
+        Assert.assertTrue("Sign in should be displayed",signInPage.signInButton.isDisplayed());
+       Assert.assertTrue("Need help signing in should be displayed", signInPage.helpSignInLink.isDisplayed());
 
     }
 
@@ -42,10 +41,10 @@ public class SignIn_StepDefs {
         signInPage.signInLink.click();
     }
 
-    @When("user input password")
-    public void userInputPassword() {
+    @And("user input {string}")
+    public void userInput(String password) {
 
-        signInPage.passwordBox.sendKeys(ConfigurationReader.getProperty("password"));
+        signInPage.passwordBox.sendKeys(password);
     }
 
     @And("user click sign in button")
@@ -59,5 +58,6 @@ public class SignIn_StepDefs {
 
         Assert.assertTrue("This message should be displayed", signInPage.passwordMessage.isDisplayed());
     }
+
 
 }
