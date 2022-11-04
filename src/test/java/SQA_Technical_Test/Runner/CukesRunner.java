@@ -14,7 +14,8 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/Features",
         glue = "SQA_Technical_Test/StepDefs",
         dryRun = false,
-        tags = ""
+        tags = "@home",
+        publish=false
 
 )
 
