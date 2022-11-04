@@ -1,4 +1,5 @@
 
+@SignIn
 Feature: Sign In icon and assertion
 
   Background:

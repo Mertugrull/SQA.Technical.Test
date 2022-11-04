@@ -1,4 +1,4 @@
-
+@ErrorMessages
 Feature: Negative log in cases, assertion the message; Something’s missing. Please check and try again. And
   assertion the message; Sorry, that password is too short. It needs to be eight characters or more.
 
